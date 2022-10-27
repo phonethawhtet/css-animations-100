@@ -20,56 +20,27 @@
             padding: 1rem;
         }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            row-gap: 1rem;
-        }
-
         button {
             padding: 1rem 2rem;
             background: royalblue;
             color: white;
             border: none;
+            outline: none;
             cursor: pointer;
-            transition-property: translate();
-            transition-duration: 5s;
+            /* transition: background-color 3s ease-in-out 1s,
+            color 2s ease 4s, border-radius 4s ease-out 6s; */
+            transition: all 3s ease-in 2s;
         }
 
         button:hover {
-            transform: translateX(500px);
-        }
-
-        #ease {
-            transition-timing-function: ease;
-        }
-
-        #linear {
-            transition-timing-function: linear;
-        }
-
-        #ease-in {
-            transition-timing-function: ease-in;
-        }
-
-        #ease-out {
-            transition-timing-function: ease-out;
-        }
-
-        #ease-in-out {
-            transition-timing-function: ease-in-out;
+            background-color: yellowgreen;
+            color: black;
+            border-radius: 50%;
         }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <button id="ease">Ease (Default)</button>
-        <button id="linear">Linear</button>
-        <button id="ease-in">Ease-In</button>
-        <button id="ease-out">Ease-Out</button>
-        <button id="ease-in-out">Ease-In-Out</button>
-    </div>
+    <button>CSS Transition</button>
 </body>
 </html>
