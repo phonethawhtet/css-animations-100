@@ -17,25 +17,59 @@
         }
 
         body {
-            padding: 2rem;
+            padding: 1rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            row-gap: 1rem;
         }
 
         button {
-            padding: 2rem 4rem;
+            padding: 1rem 2rem;
             background: royalblue;
             color: white;
             border: none;
             cursor: pointer;
-            transition-property: background-color;
-            transition-duration: 1s;
+            transition-property: translate();
+            transition-duration: 5s;
         }
 
         button:hover {
-            background: yellowgreen;
+            transform: translateX(500px);
         }
+
+        #ease {
+            transition-timing-function: ease;
+        }
+
+        #linear {
+            transition-timing-function: linear;
+        }
+
+        #ease-in {
+            transition-timing-function: ease-in;
+        }
+
+        #ease-out {
+            transition-timing-function: ease-out;
+        }
+
+        #ease-in-out {
+            transition-timing-function: ease-in-out;
+        }
+
     </style>
 </head>
 <body>
-    <button>css transition</button>
+    <div class="container">
+        <button id="ease">Ease (Default)</button>
+        <button id="linear">Linear</button>
+        <button id="ease-in">Ease-In</button>
+        <button id="ease-out">Ease-Out</button>
+        <button id="ease-in-out">Ease-In-Out</button>
+    </div>
 </body>
 </html>
