@@ -17,19 +17,19 @@
         }
 
         body {
-            perspective: 1000px; /* distance between viewer and screen */
+            perspective: 500px; /* distance between viewer and screen */
         }
 
         img {
             width: 300px;
             display: block;
             margin: 200px auto;
-            transition: transform 2s;
+            transition: transform 1s;
         }
 
         img:hover {
-            /* transform: translateZ(-300px); */
-            transform: translateZ(300px);
+            /* transform: rotateX(90deg); */
+            transform: rotateY(90deg);
         }
 
     </style>
