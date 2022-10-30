@@ -17,19 +17,26 @@
         }
 
         img {
-            width: 300px;
+            width: 200px;
             display: block;
-            margin: 200px auto;
+            margin: 20px auto;
             transition: transform 2s;
         }
 
         img:hover {
-            transform: skew(20deg, 40deg);
+            transform: rotate(20deg);
+        }
+
+        .img2 {
+            /* transform-origin: top left; */
+            /* transform-origin: 100px 200px; width height */
+            transform-origin: 30% 80%; /* right bottom */
         }
 
     </style>
 </head>
 <body>
-    <img src="./img/kitten.jpg" alt="Kitten running in forest">
+    <img class="img1" src="./img/kitten.jpg" alt="Kitten running in forest">
+    <img class="img2" src="./img/kitten.jpg" alt="Kitten running in forest">
 </body>
 </html>
