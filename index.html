@@ -16,27 +16,25 @@
             font-size: 10px;
         }
 
+        body {
+            perspective: 1000px; /* distance between viewer and screen */
+        }
+
         img {
-            width: 200px;
+            width: 300px;
             display: block;
-            margin: 20px auto;
+            margin: 200px auto;
             transition: transform 2s;
         }
 
         img:hover {
-            transform: rotate(20deg);
-        }
-
-        .img2 {
-            /* transform-origin: top left; */
-            /* transform-origin: 100px 200px; width height */
-            transform-origin: 30% 80%; /* right bottom */
+            /* transform: translateZ(-300px); */
+            transform: translateZ(300px);
         }
 
     </style>
 </head>
 <body>
-    <img class="img1" src="./img/kitten.jpg" alt="Kitten running in forest">
-    <img class="img2" src="./img/kitten.jpg" alt="Kitten running in forest">
+    <img src="./img/kitten.jpg" alt="Kitten running in forest">
 </body>
 </html>
