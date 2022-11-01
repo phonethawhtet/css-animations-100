@@ -24,10 +24,10 @@
 
         a {
             text-decoration: none;
-            background-color: #262626;
+            color: #262626;
             font-family: 'Roboto', sans-serif;
             font-size: 40px;
-            border: 4px solid #262626;
+            border: 3px solid #262626;
             padding: 40px 80px;
             position: relative;
             transition: all .5s;
@@ -35,44 +35,25 @@
         }
 
         a:before {
+            content: "Hover Me!";
             position: absolute;
-            content: 'Hover Me!';
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fffa65;
-            color: #262626;
-            font-size: 40px;
+            height: 105%;
+            width: 105%;
+            background-color: #262626;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
+            transform: scale(5);
+            opacity: 0;
             transition: all .5s;
         }
 
-        a:after {
-            position: absolute;
-            content: 'Hover Me!';
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fffa65;
-            color: #262626;
-            font-size: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all .5s;
-            transform: translate(-100%, 100%);
-        }
-
-        a:hover::before {
-            transform: translate(100%, -100%);
-        }
-
-        a:hover::after {
-            transform: translate(0);
+        a:hover:before {
+            transform: scale(1);
+            opacity: 1;
         }
 
 
