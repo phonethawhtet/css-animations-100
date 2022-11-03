@@ -21,86 +21,67 @@
             justify-content: center;
             align-items: center;
             font-family: 'Roboto', sans-serif;
-            background-color: #272727;
         }
 
         a {
-            width: 220px;
-            height: 80px;
-            color: #ff0;
-            background-color: transparent;
-            font-size: 26px;
+            width: 300px;
+            height: 60px;
             text-decoration: none;
             text-transform: uppercase;
+            background-color: transparent;
             text-align: center;
-            line-height: 80px;
-            transition: all .5s;
+            line-height: 60px;
+            font-weight: bold;
+            letter-spacing: 2px;
             position: relative;
-        }
-
-        a:before, a:after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 20px;
-            height: 20px;
-            background-color: #ff0;
-            border-radius: 50%;
-            transform: translateY(-50%);
-            transition: all .3s;
-            z-index: -1;
-            opacity: 0;
+            transition: all .2s;
+            color: white;
         }
 
         a:before {
-            left: 0;
-            box-shadow: -100px 0 0 #ff0;
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 100%;
+            height: 100%;
+            background-color: #20caff;
+            z-index: -1;
+            mix-blend-mode: multiply;
+            transition: all .2s;
+            transform-origin: top;
         }
 
         a:after {
-            right: 0;
-            box-shadow: 100px 0 0 #ff0;
-        }
-
-        a:hover:before {
-            left: 50%;
-            box-shadow: 30px 0 0 #ff0;
-            transform: translateX(-50%) translateY(-50%);
-            opacity: 1;
-        }
-
-        a:hover:after {
-            right: 50%;
-            box-shadow: -30px 0 0 #ff0;
-            transform: translateX(50%) translateY(-50%);
-            opacity: 1;
-        }
-
-        a span {
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 3px;
+            left: 3px;
             width: 100%;
             height: 100%;
-            background-color: #ff0;
-            border-radius: 8px;
-            transform: scale(0);
-            transition: all .3s;
+            background-color: #ff7675;
             z-index: -1;
-        }
-
-        a:hover span {
-            transform: scale(1);
-            transition-delay: 0.4s;
+            mix-blend-mode: multiply;
+            transition: all .2s;
+            transform-origin: bottom;
         }
 
         a:hover {
-            color: #262626;
-            transition-delay: .4s;
+            color: #272727;
+        }
+
+        a:hover:before {
+            top: -6px;
+            transform: perspective(1000px) rotateX(75deg);
+        }
+
+        a:hover:after {
+            top: 6px;
+            transform: perspective(1000px) rotateX(-75deg);
         }
     </style>
 </head>
 <body>
-    <a href="#"><span></span>Button</a>
+    <a href="#">Button Hover Effect</a>
 </body>
 </html>
