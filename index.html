@@ -24,54 +24,50 @@
             background-color: #212121;
         }
 
-        a {
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 22px;
+        button {
+            border: none;
+            padding: 12px 40px;
+            background-color: #c47135;
+            color: white;
             font-family: 'Inter', sans-serif;
-            letter-spacing: 3px;
-            height: 60px;
-            width: 200px;
-            line-height: 60px;
-            text-align: center;
-            color: #fdc518;
+            font-size: 22px;
+            text-transform: uppercase;
+            cursor: pointer;
             position: relative;
         }
 
-        a:before {
+        button:before {
             content: "";
             position: absolute;
-            left: 0;
-            top: -15px;
-            width: 200px;
-            height: 90px;
-            border-left: 2px solid red;
-            border-right: 2px solid #fdc518;
-            transition: all 0.5s;
+            top: -5px;
+            left: -5px;
+            width: 24px;
+            height: 24px;
+            border-top: 2px solid #c47135;
+            border-left: 2px solid #c47135;
+            transition: all .25s;
         }
 
-        a:after {
+        button:after {
             content: "";
             position: absolute;
-            left: -15px;
-            top: 0;
-            width: 230px;
-            height: 60px;
-            border-top: 2px solid red;
-            border-bottom: 2px solid #fdc518;
-            transition: all 0.5s;
+            bottom: -5px;
+            right: -5px;
+            width: 24px;
+            height: 24px;
+            border-bottom: 2px solid #c47135;
+            border-right: 2px solid #c47135;
+            transition: all .25s;
         }
 
-        a:hover:before {
-            transform: rotateY(180deg);
-        }
-
-        a:hover:after {
-            transform: rotateX(180deg);
+        button:hover:before,
+        button:hover:after {
+            height: calc(100% + 8px);
+            width: calc(100% + 8px);
         }
     </style>
 </head>
 <body>
-    <a href="#">Hover Me</a>
+    <button>submit</button>
 </body>
 </html>
