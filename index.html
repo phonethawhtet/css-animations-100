@@ -21,70 +21,61 @@
             justify-content: center;
             align-items: center;
             font-family: 'Roboto', sans-serif;
-            background-color: #272727;
         }
 
         a {
             text-decoration: none;
-            padding: 15px 30px;
-            color: #00aeff;
-            font-size: 18px;
-            letter-spacing: 3px ;
-            border: 2px solid #00aeff;
-            text-transform: uppercase;
+            width: 160px;
+            height: 60px;
+            color: black;
+            line-height: 60px;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 25px;
             position: relative;
+            transition: all 0.2s;
             overflow: hidden;
-            transition: all 0.5s;
+        }
+
+        a span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            border: 2px solid black;
+            z-index: -1;
+        }
+
+        span:before {
+            content: "";
+            position: absolute;
+            width: 8%;
+            height: 500%;
+            background-color: white;
+            top: 50%;
+            left: 50%;
+            transition: all 0.2s;
+            transform: translate(-50%, -50%) rotate(-60deg);
+        }
+
+        a:hover span:before {
+            width: 100%;
+            background-color: black;
+            transform: translate(-50%, -50%) rotate(60deg);
         }
 
         a:hover {
             color: white;
         }
 
-        a:hover .wave {
-            top: 0;
-        }
-
-        .wave {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: calc(100% + 22px);
-            background-color: #00aeff;
-            transition: all 1s;
-            z-index: -1;
-        }
-
-        .wave:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 22px;
-            background-image: url('wave.png');
-            animation: wavy 0.5s linear infinite;
-        }
-
-        @keyframes wavy {
-            0% {
-                background-position-x: 0;
-            }
-            100% {
-                background-position-x: 118px ;
-            }
-        }
-
-
-
-
     </style>
 </head>
 <body>
     <a href="#">
         button
-        <div class="wave"></div>
+        <span></span>
     </a>
 </body>
 </html>
