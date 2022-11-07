@@ -21,90 +21,70 @@
             justify-content: center;
             align-items: center;
             font-family: 'Roboto', sans-serif;
-            overflow: hidden;
-            background-color: #222;
+            background-color: #272727;
         }
 
-        button {
-            background-color: transparent;
-            border: none;
-            position: relative;
-            width: 400px;
-            height: 120px;
+        a {
+            text-decoration: none;
+            padding: 15px 30px;
+            color: #00aeff;
+            font-size: 18px;
+            letter-spacing: 3px ;
+            border: 2px solid #00aeff;
             text-transform: uppercase;
-            line-height: 120px;
-            text-align: center;
-            color: white;
-            font-size: 45px;
-            letter-spacing: 15px;
-            cursor: pointer;
+            position: relative;
             overflow: hidden;
-        }
-
-        button:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 4px;
-            background-color: white;
             transition: all 0.5s;
         }
 
-        button:hover:before {
-            left: 0;
+        a:hover {
+            color: white;
         }
 
-        button:after {
-            content: "";
-            position: absolute;
-            right: -100%;
-            bottom: 0;
-            width: 100%;
-            height: 4px;
-            background-color: white;
-            transition: all 0.5s;
-        }
-
-        button:hover:after {
-            right: 0;
-        }
-
-        button span:before {
-            content: "";
-            position: absolute;
-            top: -100%;
-            right: 0;
-            width: 4px;
-            height: 100%;
-            background-color: white;
-            transition: all 0.5s;
-        }
-
-        button:hover span:before {
+        a:hover .wave {
             top: 0;
         }
 
-        button span:after {
-            content: "";
+        .wave {
             position: absolute;
-            bottom: -100%;
-            left: 0;
-            width: 4px;
+            width: 100%;
             height: 100%;
-            background-color: white;
-            transition: all 0.5s;
+            left: 0;
+            top: calc(100% + 22px);
+            background-color: #00aeff;
+            transition: all 1s;
+            z-index: -1;
         }
 
-        button:hover span:after {
-            bottom: 0;
+        .wave:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 22px;
+            background-image: url('wave.png');
+            animation: wavy 0.5s linear infinite;
         }
+
+        @keyframes wavy {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 118px ;
+            }
+        }
+
+
 
 
     </style>
 </head>
 <body>
-    <button>button<span></span></button>
+    <a href="#">
+        button
+        <div class="wave"></div>
+    </a>
 </body>
 </html>
