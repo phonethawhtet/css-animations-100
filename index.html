@@ -24,73 +24,63 @@
         justify-content: center;
         align-items: center;
         font-family: "Roboto", sans-serif;
-        background-color: #10ac84;
       }
 
-      a {
-        text-decoration: none;
+      .container {
+        width: 500px;
+        height: 500px;
         position: relative;
-        width: 250px;
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: #250e74;
-        border: 4px solid #250e74;
-        font-size: 24px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        transition: all 0.25s;
         overflow: hidden;
       }
 
-      a:hover {
+      img {
+        width: 100%;
+        transition: transform 0.5s;
+      }
+
+      .caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         color: white;
-      }
-
-      a:before {
-        content: "";
-        position: absolute;
-        top: -4px;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        border-top: 40px solid #250e74;
-        border-bottom: 40px solid #250e74;
-        border-right: 40px solid transparent;
         transition: all 0.5s;
-        z-index: -1;
-        transform: translateX(-100%);
+        opacity: 0;
+        background: transparent;
       }
 
-      a:hover:before {
-        transform: translateX(0%);
+      .caption h1 {
+        text-transform: uppercase;
+        margin: 0;
       }
 
-      a:after {
-        content: "";
-        position: absolute;
-        top: -4px;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        border-top: 40px solid #250e74;
-        border-bottom: 40px solid #250e74;
-        border-left: 40px solid transparent;
-        transition: all 0.5s;
-        z-index: -1;
-        transform: translateX(100%);
+      .caption p {
+        font-size: 18px;
+        text-transform: capitalize;
       }
 
-      a:hover:after {
-        transform: translateX(0%);
+      .container:hover .caption {
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 1;
       }
 
-
+      .container:hover img {
+        transform: rotate(15deg) scale(1.3);
+      }
     </style>
   </head>
   <body>
-    <a href="#">button</a>
+    <div class="container">
+      <img src="./img/kitten.jpg" />
+      <div class="caption">
+        <h1>amazing caption!</h1>
+        <p>you can write anything you want here!</p>
+      </div>
+    </div>
   </body>
 </html>
