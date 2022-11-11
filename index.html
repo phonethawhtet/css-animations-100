@@ -48,12 +48,12 @@
         height: 205%;
         background-color: #2d3436;
         opacity: .8;
-        transition: all .25s;
-        transform: translate(550px, 300px) rotate(45deg);
+        transition: all .2s;
+        transform: translate(650px, -100px) rotate(180deg);
       }
 
       .container:hover:before {
-        transform: translate(-50px,-150px) rotate(45deg);
+        transform: translate(0) rotate(0deg);
       }
 
       .caption {
@@ -75,13 +75,13 @@
         padding: 20px;
         margin-top: 20px;
         background-color: rgba(0, 0, 0, 0.8);
-        transform: translate(200px, -200px);
-        transition: all .25s;
-        transition-delay: 0.3s;
+        transform: translateY(-150px);
+        transition: all .2s;
+        transition-delay: 0.5s;
       }
 
       .container:hover h2 {
-        transform: translate(0);
+        transform: translateY(0);
       }
 
       p {
@@ -89,13 +89,13 @@
         width: 80%;
         align-self: center;
         text-align: center;
-        transition: all 0.25s;
-        transform: translate(-200px, 200px);
+        transition: all 0.2s;
+        transform: translateX(300px) rotate(90deg);
         transition-delay: 0.4s;
       }
 
       .container:hover p {
-        transform: translate(0);
+        transform: translateX(0) rotate(0deg);
       }
 
       a {
@@ -106,15 +106,15 @@
         width: 120px;
         padding: 10px;
         margin-bottom: 20px;
-        transition: all 0.25s;
-        transform: translateY(100px);
+        transition: all 0.2s;
+        transform: translateY(-300px);
         font-size: 16px;
         text-align: center;
         transition-delay: 0.5sk;
       }
 
       .container:hover a {
-        transform: translateY(0);
+        transform: translateY(0px);
       }
 
     </style>
