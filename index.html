@@ -39,13 +39,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: all .5s;
-        transition-delay: .5s;
-      }
-
-      .container:hover img {
-        transform: scale(0);
-        transition-delay: 0s;
       }
 
       .container:before {
@@ -56,14 +49,12 @@
         width: 120%;
         height: 205%;
         background-color: #006266;
-        opacity: .8;
-        transition: all .5s;
-        transform: scale(0) rotate(-180deg);
-        transition-delay: .5s;
-    }
+        opacity: 0;
+        transition: all 0.3s;
+      }
 
-    .container:hover:before {
-        transform: scale(1) rotate(0deg);
+      .container:hover:before {
+        opacity: 1;
       }
 
       .caption {
@@ -87,7 +78,6 @@
         background-color: rgba(0, 0, 0, 0.8);
       }
 
-
       p {
         font-size: 16px;
         width: 80%;
@@ -107,33 +97,41 @@
         transition: all 0.2s;
         font-size: 16px;
         text-align: center;
+        transform: translateY(150px);
+        transition: all 0.3s;
       }
 
-      h2, p, a {
+      .container:hover a {
+        transform: translateY(0);
+      }
+
+      h2,
+      p {
+        transform: scale(10);
         opacity: 0;
-        transition: all 0.5s;
-    }
-
-    .container:hover h2,
-    .container:hover p,
-    .container:hover a {
-        opacity: 1;
-        transition-delay: 1s;
+        transition: all 0.3s;
       }
 
+      .container:hover h2,
+      .container:hover p {
+        opacity: 1;
+        transform: scale(1);
+      }
     </style>
   </head>
   <body>
-
     <div class="container">
-        <img src="./img/kitten.jpg">
+      <img src="./img/kitten.jpg" />
 
-        <div class="caption">
-            <h2>image hover</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet totam est ipsum aperiam sunt maiores et laudantium nostrum exercitationem ea modi nisi sed repellat repudiandae sapiente quaerat.</p>
-            <a href="#">read more</a>
-        </div>
+      <div class="caption">
+        <h2>image hover</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet totam
+          est ipsum aperiam sunt maiores et laudantium nostrum exercitationem ea
+          modi nisi sed repellat repudiandae sapiente quaerat.
+        </p>
+        <a href="#">read more</a>
+      </div>
     </div>
-
   </body>
 </html>
