@@ -23,7 +23,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
       }
 
       ul {
@@ -32,70 +32,96 @@
       }
 
       ul li a {
-        color: #272727;
-        font-size: 22px;
+        display: block;
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: red;
+        text-transform: capitalize;
         text-decoration: none;
-        text-transform: uppercase;
-        padding: 5px 10px;
-        margin: 0px 10px;
         position: relative;
         transition: all .5s;
       }
 
-      a:hover {
-        background-color: #e91e63;
-        color: white;
-      }
-
-      a:before {
-        content: "";
+      ul li a span {
         position: absolute;
-        bottom: 12px;
-        left: 12px;
-        width: 12px;
-        height: 12px;
-        border: 3px solid #e91e63;
-        border-width: 0 0 3px 3px;
-        opacity: 0;
-        transition: all 0.3s;
+        height: 25%;
+        width: 100%;
+        background-color: #262626;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        transform: scaleX(0);
+        transition: all 0.5s;
+        transform-origin: left;
       }
 
-      a:hover:before {
-        left: -8px;
-        bottom: -8px;
-        opacity: 1;
+      ul li a:hover span {
+        transform: scaleX(1);
       }
 
-      a:after {
-        content: "";
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        width: 12px;
-        height: 12px;
-        border: 3px solid #e91e63;
-        border-width: 3px 3px 0 0;
-        opacity: 0;
-        transition: all 0.3s;
+      ul li a span:nth-child(2) {
+        top: 25%;
+        transition-delay: .15s;
+    }
+    ul li a span:nth-child(3) {
+        top: 50%;
+        transition-delay: .3s;
+    }
+    ul li a span:nth-child(4) {
+        top: 75%;
+        transition-delay: .45s;
       }
-
-      a:hover:after {
-        top: -8px;
-        right: -8px;
-        opacity: 1;
-      }
-
-
-
     </style>
   </head>
   <body>
     <ul role="list">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
+      <li>
+        <a href="#">
+          Home
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          About
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Services
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span
+        ></a>
+      </li>
+      <li>
+        <a href="#">
+          Portfolio
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span
+        ></a>
+      </li>
+      <li>
+        <a href="#">
+          Contact
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span
+        ></a>
+      </li>
     </ul>
   </body>
 </html>
