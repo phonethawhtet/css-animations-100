@@ -24,7 +24,7 @@
         justify-content: center;
         align-items: center;
         font-family: "Inter", sans-serif;
-        background-color: #fff;
+        background-color: #222;
       }
 
       ul {
@@ -33,78 +33,122 @@
 
       li {
         list-style: none;
+        padding: 10px 40px;
       }
 
-      a {
-        position: relative;
-        display: block;
-        padding: 15px 30px;
+      ul li a {
         text-decoration: none;
         text-transform: uppercase;
-        color: #222;
-        font-size: 22px;
-        font-weight: bold;
-        transition: 0.5s;
+        font-size: 24px;
+        color: white;
+        position: relative;
+        padding: 5px
       }
 
       a:hover {
-        color: white;
+        color: #ff0;
       }
 
-      a:before {
+      span:first-child:before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        border-top: 2px solid black;
-        border-bottom: 2px solid black;
+        width: 8px;
+        height: 8px;
+        background-color: transparent;
+        border-top: 2px solid #ff0;
+        border-left: 2px solid #ff0;
         opacity: 0;
-        transform: scaleY(2);
-        transition: .5s;
+        transition: 0.2s;
+    }
+
+    span:first-child:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        background-color: transparent;
+        border-top: 2px solid #ff0;
+        border-right: 2px solid #ff0;
+        opacity: 0;
+        transition: 0.2s;
       }
 
-      a:hover:before {
-        transform: scaleY(1.2);
+      span:last-child:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background-color: transparent;
+        border-bottom: 2px solid #ff0;
+        border-left: 2px solid #ff0;
+        opacity: 0;
+        transition: 0.2s;
+      }
+
+      span:last-child:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        background-color: transparent;
+        border-bottom: 2px solid #ff0;
+        border-right: 2px solid #ff0;
+        opacity: 0;
+        transition: 0.2s;
+      }
+
+      a:hover span:first-child:before {
+        top: -10px;
+        left: -10px;
         opacity: 1;
       }
 
-      a:after {
-        content: "";
-        position: absolute;
-        top: 2px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #222;
-        transform: scale(0);
-        transition: .5s;
-        z-index: -1;
+      a:hover span:first-child:after {
+        top: -10px;
+        right: -10px;
+        opacity: 1;
       }
 
-      a:hover:after {
-        transform: scale(1);
+      a:hover span:last-child:before {
+        bottom: -10px;
+        left: -10px;
+        opacity: 1;
       }
+
+      a:hover span:last-child:after {
+        bottom: -10px;
+        right: -10px;
+        opacity: 1;
+      }
+
+
 
     </style>
   </head>
   <body>
     <ul>
       <li>
-        <a href="#"> Home </a>
+        <a href="#"> Home <span></span><span></span> </a>
       </li>
       <li>
-        <a href="#"> About </a>
+        <a href="#"> About <span></span><span></span> </a>
       </li>
       <li>
-        <a href="#"> Services </a>
+        <a href="#"> Services <span></span><span></span> </a>
       </li>
       <li>
-        <a href="#"> Portfolio </a>
+        <a href="#"> Portfolio <span></span><span></span> </a>
       </li>
       <li>
-        <a href="#"> Contact </a>
+        <a href="#"> Contact <span></span><span></span> </a>
       </li>
     </ul>
   </body>
