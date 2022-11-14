@@ -27,52 +27,54 @@
       }
 
       ul {
-        display: flex;
         list-style: none;
+        display: flex;
       }
 
-      ul li a {
-        display: block;
-        width: 120px;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        color: red;
-        text-transform: capitalize;
+      li {
+        padding: 10px 20px;
+      }
+
+      a {
         text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #222;
         position: relative;
-        transition: all .5s;
       }
 
-      ul li a span {
+      ul li a:before {
+        content: "";
+        width: 0;
+        height: 5px;
+        background-color: #00bcd4;
         position: absolute;
-        height: 25%;
-        width: 100%;
-        background-color: #262626;
-        z-index: -1;
+        top: 120%;
         left: 0;
-        top: 0;
-        transform: scaleX(0);
         transition: all 0.5s;
-        transform-origin: left;
+    }
+
+    ul li a:after {
+        content: "";
+        width: 0;
+        height: 5px;
+        background-color: #f0f;
+        position: absolute;
+        top: 120%;
+        right: 0;
+        transition: all 0.5s;
       }
 
-      ul li a:hover span {
-        transform: scaleX(1);
+      ul li a:hover:before {
+        width: 50%;
+        transform: translateX(100%);
       }
 
-      ul li a span:nth-child(2) {
-        top: 25%;
-        transition-delay: .15s;
-    }
-    ul li a span:nth-child(3) {
-        top: 50%;
-        transition-delay: .3s;
-    }
-    ul li a span:nth-child(4) {
-        top: 75%;
-        transition-delay: .45s;
+      ul li a:hover:after {
+        width: 50%;
+        transform: translateX(-100%);
       }
+
     </style>
   </head>
   <body>
@@ -80,47 +82,27 @@
       <li>
         <a href="#">
           Home
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
         </a>
       </li>
       <li>
         <a href="#">
           About
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
         </a>
       </li>
       <li>
         <a href="#">
           Services
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span
-        ></a>
+        </a>
       </li>
       <li>
         <a href="#">
           Portfolio
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span
-        ></a>
+        </a>
       </li>
       <li>
         <a href="#">
           Contact
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span
-        ></a>
+        </a>
       </li>
     </ul>
   </body>
