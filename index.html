@@ -24,6 +24,7 @@
         justify-content: center;
         align-items: center;
         font-family: "Inter", sans-serif;
+        background-color: #006266;
       }
 
       ul {
@@ -31,78 +32,67 @@
         display: flex;
       }
 
+      ul:hover a {
+        filter: blur(5px);
+        opacity: 0.2;
+      }
+
       li {
-        padding: 10px 20px;
+        margin: 0 20px;
+        transition: .5s;
       }
 
       a {
+        display: block;
+        position: relative;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 20px;
-        color: #222;
-        position: relative;
+        padding: 5px;
+        font-size: 22px;
+        color: white;
+        transition: all .3s;
       }
 
-      ul li a:before {
+      ul a:hover {
+        transform: scale(1.5);
+        filter: none;
+        opacity: 1;
+      }
+
+      a:before {
         content: "";
-        width: 0;
-        height: 5px;
-        background-color: #00bcd4;
         position: absolute;
-        top: 120%;
+        top: 0;
         left: 0;
-        transition: all 0.5s;
-    }
-
-    ul li a:after {
-        content: "";
-        width: 0;
-        height: 5px;
-        background-color: #f0f;
-        position: absolute;
-        top: 120%;
-        right: 0;
-        transition: all 0.5s;
+        width: 100%;
+        height: 100%;
+        background-color: #ee5a24;
+        transition: .3s;
+        transform: scale(0);
+        z-index: -1;
       }
 
-      ul li a:hover:before {
-        width: 50%;
-        transform: translateX(100%);
+      a:hover:before {
+        transform: scale(1);
       }
-
-      ul li a:hover:after {
-        width: 50%;
-        transform: translateX(-100%);
-      }
-
     </style>
   </head>
   <body>
     <ul role="list">
       <li>
-        <a href="#">
-          Home
-        </a>
+        <a href="#"> Home </a>
       </li>
       <li>
-        <a href="#">
-          About
-        </a>
+        <a href="#"> About </a>
       </li>
       <li>
-        <a href="#">
-          Services
-        </a>
+        <a href="#"> Services </a>
       </li>
       <li>
-        <a href="#">
-          Portfolio
-        </a>
+        <a href="#"> Portfolio </a>
       </li>
       <li>
-        <a href="#">
-          Contact
-        </a>
+        <a href="#"> Contact </a>
       </li>
     </ul>
   </body>
