@@ -24,51 +24,31 @@
         justify-content: center;
         align-items: center;
         font-family: "Inter", sans-serif;
-        background-color: #222;
+        background-color: #fff;
       }
 
       ul {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
       }
 
       li {
-        position: relative;
-        list-style-type: none;
-        margin: 5px;
+        list-style: none;
       }
 
       a {
         position: relative;
         display: block;
-        height: 40px;
+        padding: 15px 30px;
         text-decoration: none;
-        padding: 5px 10px;
-        font-weight: 300;
-        letter-spacing: 2px;
-        overflow: hidden;
-      }
-
-      ul li a span {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        text-transform: uppercase;
+        color: #222;
+        font-size: 22px;
+        font-weight: bold;
         transition: 0.5s;
-        color: white;
-        font-size: 20px;
-        text-transform: capitalize;
-        transition-delay: 0.5s;
       }
 
-      a:hover span:nth-child(1),
-      a:hover span:nth-child(2) {
-        transform: translateY(-100%);
-        transition-delay: 0s;
+      a:hover {
+        color: white;
       }
 
       a:before {
@@ -78,49 +58,53 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #16a085;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: 0.5s;
-        transition-delay: 0.5s;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        opacity: 0;
+        transform: scaleY(2);
+        transition: .5s;
       }
 
       a:hover:before {
-        transform: scaleX(1);
+        transform: scaleY(1.2);
+        opacity: 1;
       }
+
+      a:after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #222;
+        transform: scale(0);
+        transition: .5s;
+        z-index: -1;
+      }
+
+      a:hover:after {
+        transform: scale(1);
+      }
+
     </style>
   </head>
   <body>
     <ul>
       <li>
-        <a href="#">
-          <span>Home</span>
-          <span>Home</span>
-        </a>
+        <a href="#"> Home </a>
       </li>
       <li>
-        <a href="#">
-          <span>About</span>
-          <span>About</span>
-        </a>
+        <a href="#"> About </a>
       </li>
       <li>
-        <a href="#">
-          <span>Services</span>
-          <span>Services</span>
-        </a>
+        <a href="#"> Services </a>
       </li>
       <li>
-        <a href="#">
-          <span>Portfolio</span>
-          <span>Portfolio</span>
-        </a>
+        <a href="#"> Portfolio </a>
       </li>
       <li>
-        <a href="#">
-          <span>Contact</span>
-          <span>Contact</span>
-        </a>
+        <a href="#"> Contact </a>
       </li>
     </ul>
   </body>
