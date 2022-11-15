@@ -23,12 +23,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: "Inter", sans-serif;
+        font-family: "Raleway", sans-serif;
         background-color: rgb(27, 27, 27);
       }
 
       ul {
-        display: flex;
       }
 
       li {
@@ -38,49 +37,41 @@
       a {
         position: relative;
         display: block;
-        padding: 15px 30px;
-        margin: 0 15px;
+        color: transparent;
+        -webkit-text-stroke: 1px white;
+        font-size: 80px;
+        font-weight: bold;
         text-decoration: none;
-        text-transform: uppercase;
-        color: #ffeb3b;
       }
 
-      a:before {
-        content: "";
+      a:before,
+      a:after {
+        text-transform: capitalize;
+        content: attr(data-text);
         position: absolute;
-        top: -1px;
-        left: -1px;
-        width: 100%;
-        height: 100%;
-        border-top: 2px solid #ffeb3b;
-        border-left: 2px solid #ffeb3b;
+        top: 0;
+        left: 0;
         transition: .5s;
-        transform-origin: left;
       }
 
       a:hover:before {
-        width: 15px;
-        height: 15px;
-        transform: rotate(360deg);
-      }
-
-      a:after {
-        content: "";
-        position: absolute;
-        bottom: -1px;
-        right: -1px;
-        width: 100%;
-        height: 100%;
-        border-bottom: 2px solid #ffeb3b;
-        border-right: 2px solid #ffeb3b;
-        transition: .5s;
-        transform-origin: right;
+        z-index: 1;
+        color: rgb(187, 0, 0);
+        -webkit-text-stroke: 1px black;
+        transform: translate(10px, -10px);
       }
 
       a:hover:after {
-        width: 15px;
-        height: 15px;
-        transform: rotate(360deg);
+        z-index: 2;
+        color: rgb(119, 239, 255);
+        -webkit-text-stroke: 1px black;
+        transform: translate(20px, -20px);
+      }
+
+      a:hover {
+        color: white;
+        transition: .5s;
+        -webkit-text-stroke: 1px black;
       }
 
     </style>
@@ -88,19 +79,19 @@
   <body>
     <ul>
       <li>
-        <a href="#"> Home </a>
+        <a href="#" data-text="home"> Home </a>
       </li>
       <li>
-        <a href="#"> About </a>
+        <a href="#" data-text="about"> About </a>
       </li>
       <li>
-        <a href="#"> Services </a>
+        <a href="#" data-text="services"> Services </a>
       </li>
       <li>
-        <a href="#"> Portfolio </a>
+        <a href="#" data-text="portfolio"> Portfolio </a>
       </li>
       <li>
-        <a href="#"> Contact </a>
+        <a href="#" data-text="contact"> Contact </a>
       </li>
     </ul>
   </body>
