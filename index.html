@@ -24,75 +24,77 @@
         justify-content: center;
         align-items: center;
         font-family: "Raleway", sans-serif;
-        background-color: rgb(27, 27, 27);
       }
 
-      ul {
+      .card {
+        position: relative;
+        width: 320px;
+        padding: 40px;
+        background-color: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        overflow: hidden;
       }
 
-      li {
-        list-style: none;
+      .card:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: calc(-100% + 5px);
+        width: 100%;
+        height: 100%;
+        background-color: #ff56ac;
+        z-index: 1;
+        transition: .5s;
+      }
+
+      .card:hover::before {
+        bottom: 0;
+      }
+
+      .content {
+        position: relative;
+        text-transform: capitalize;
+        color: #777;
+        z-index: 2;
+        transition: .5s;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        margin-top: 0px;
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 18px;
       }
 
       a {
-        position: relative;
-        display: block;
-        color: transparent;
-        -webkit-text-stroke: 1px white;
-        font-size: 80px;
-        font-weight: bold;
+        margin-top: 10px;
+        font-size: 14px;
+        display: inline-block;
         text-decoration: none;
+        color: #777;
+        padding: 6px 10px;
+        font-weight: 600;
+        background-color: white;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.05);
       }
 
-      a:before,
-      a:after {
-        text-transform: capitalize;
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: .5s;
-      }
-
-      a:hover:before {
-        z-index: 1;
-        color: rgb(187, 0, 0);
-        -webkit-text-stroke: 1px black;
-        transform: translate(10px, -10px);
-      }
-
-      a:hover:after {
-        z-index: 2;
-        color: rgb(119, 239, 255);
-        -webkit-text-stroke: 1px black;
-        transform: translate(20px, -20px);
-      }
-
-      a:hover {
+      .card:hover .content {
         color: white;
-        transition: .5s;
-        -webkit-text-stroke: 1px black;
       }
+
 
     </style>
   </head>
   <body>
-    <ul>
-      <li>
-        <a href="#" data-text="home"> Home </a>
-      </li>
-      <li>
-        <a href="#" data-text="about"> About </a>
-      </li>
-      <li>
-        <a href="#" data-text="services"> Services </a>
-      </li>
-      <li>
-        <a href="#" data-text="portfolio"> Portfolio </a>
-      </li>
-      <li>
-        <a href="#" data-text="contact"> Contact </a>
-      </li>
-    </ul>
+    <div class="card">
+        <div class="content">
+            <h2>design</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas quisquam et, fuga error quod aliquam magnam dolores architecto eaque officia saepe amet nihil praesentium voluptatum dolorum earum enim molestiae iusto.</p>
+            <a href="#">read more</a>
+        </div>
+    </div>
   </body>
 </html>
