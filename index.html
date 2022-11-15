@@ -24,7 +24,7 @@
         justify-content: center;
         align-items: center;
         font-family: "Inter", sans-serif;
-        background-color: #222;
+        background-color: rgb(27, 27, 27);
       }
 
       ul {
@@ -33,122 +33,74 @@
 
       li {
         list-style: none;
-        padding: 10px 40px;
       }
 
-      ul li a {
+      a {
+        position: relative;
+        display: block;
+        padding: 15px 30px;
+        margin: 0 15px;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 24px;
-        color: white;
-        position: relative;
-        padding: 5px
+        color: #ffeb3b;
       }
 
-      a:hover {
-        color: #ff0;
-      }
-
-      span:first-child:before {
+      a:before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 8px;
-        height: 8px;
-        background-color: transparent;
-        border-top: 2px solid #ff0;
-        border-left: 2px solid #ff0;
-        opacity: 0;
-        transition: 0.2s;
-    }
+        top: -1px;
+        left: -1px;
+        width: 100%;
+        height: 100%;
+        border-top: 2px solid #ffeb3b;
+        border-left: 2px solid #ffeb3b;
+        transition: .5s;
+        transform-origin: left;
+      }
 
-    span:first-child:after {
+      a:hover:before {
+        width: 15px;
+        height: 15px;
+        transform: rotate(360deg);
+      }
+
+      a:after {
         content: "";
         position: absolute;
-        top: 0;
-        right: 0;
-        width: 8px;
-        height: 8px;
-        background-color: transparent;
-        border-top: 2px solid #ff0;
-        border-right: 2px solid #ff0;
-        opacity: 0;
-        transition: 0.2s;
+        bottom: -1px;
+        right: -1px;
+        width: 100%;
+        height: 100%;
+        border-bottom: 2px solid #ffeb3b;
+        border-right: 2px solid #ffeb3b;
+        transition: .5s;
+        transform-origin: right;
       }
 
-      span:last-child:before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 8px;
-        height: 8px;
-        background-color: transparent;
-        border-bottom: 2px solid #ff0;
-        border-left: 2px solid #ff0;
-        opacity: 0;
-        transition: 0.2s;
+      a:hover:after {
+        width: 15px;
+        height: 15px;
+        transform: rotate(360deg);
       }
-
-      span:last-child:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 8px;
-        height: 8px;
-        background-color: transparent;
-        border-bottom: 2px solid #ff0;
-        border-right: 2px solid #ff0;
-        opacity: 0;
-        transition: 0.2s;
-      }
-
-      a:hover span:first-child:before {
-        top: -10px;
-        left: -10px;
-        opacity: 1;
-      }
-
-      a:hover span:first-child:after {
-        top: -10px;
-        right: -10px;
-        opacity: 1;
-      }
-
-      a:hover span:last-child:before {
-        bottom: -10px;
-        left: -10px;
-        opacity: 1;
-      }
-
-      a:hover span:last-child:after {
-        bottom: -10px;
-        right: -10px;
-        opacity: 1;
-      }
-
-
 
     </style>
   </head>
   <body>
     <ul>
       <li>
-        <a href="#"> Home <span></span><span></span> </a>
+        <a href="#"> Home </a>
       </li>
       <li>
-        <a href="#"> About <span></span><span></span> </a>
+        <a href="#"> About </a>
       </li>
       <li>
-        <a href="#"> Services <span></span><span></span> </a>
+        <a href="#"> Services </a>
       </li>
       <li>
-        <a href="#"> Portfolio <span></span><span></span> </a>
+        <a href="#"> Portfolio </a>
       </li>
       <li>
-        <a href="#"> Contact <span></span><span></span> </a>
+        <a href="#"> Contact </a>
       </li>
     </ul>
   </body>
