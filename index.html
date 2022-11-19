@@ -39,11 +39,14 @@
       }
 
       @keyframes moving {
-        from {
+        0% {
           transform: translateX(0);
         }
-        to {
+        50% {
           transform: translateX(1000px);
+        }
+        100% {
+            transform: translate(1000px, 500px);
         }
       }
     </style>
