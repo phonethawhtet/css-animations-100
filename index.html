@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,131 +27,28 @@
 
       body {
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-family: "Raleway", sans-serif;
       }
 
-      .box {
-        position: relative;
-        width: 200px;
-        height: 200px;
+      div {
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        animation-name: moving;
+        animation-duration: 3s;
       }
 
-      h1 {
-        color: #272727;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        font-size: 24px;
-        text-transform: uppercase;
+      @keyframes moving {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(1000px);
+        }
       }
-
-      span {
-        color: #58c747;
-        font-size: 30px;
-      }
-
-      .box:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-top: 4px solid #58c747;
-        border-bottom: 4px solid #58c747;
-        transform: scaleX(0);
-        transition: .5s;
-    }
-
-    .box:hover:before {
-        transform: scaleX(1);
-
-      }
-
-      .box:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-left: 4px solid #58c747;
-        border-right: 4px solid #58c747;
-        transform: scaleY(0);
-        transition: .5s;
-      }
-
-      .box:hover:after {
-        transform: scaleY(1);
-        transition-delay: .5s;
-    }
-
-    .rotated {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: block;
-        transform: rotate(45deg);
-    }
-
-    .rotated:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-top: 4px solid #58c747;
-        border-bottom: 4px solid #58c747;
-        transform: scaleX(0);
-        transition: .5s;
-    }
-
-    .box:hover .rotated:before {
-        transform: scaleX(1);
-        transition-delay: 1s;
-
-    }
-
-      .rotated:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-left: 4px solid #58c747;
-        border-right: 4px solid #58c747;
-        transform: scaleY(0);
-        transition: .5s;
-      }
-
-      .box:hover .rotated:after {
-          transform: scaleY(1);
-          transition-delay: 1.5s;
-      }
-
     </style>
   </head>
   <body>
-
-    <div class="box">
-        <span class="rotated"></span>
-        <h1>
-            CSS
-            <br>
-            <span>border</span>
-            <br>
-            hover
-            <br>
-            effect
-        </h1>
-    </div>
-
+    <div></div>
   </body>
 </html>
