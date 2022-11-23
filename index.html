@@ -27,37 +27,39 @@
 
       body {
         height: 100vh;
-        font-family: "Raleway", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #26de81;
       }
 
-      div {
-        width: 150px;
-        height: 150px;
-        background-color: red;
-        /* animation-name: moving;
-        animation-duration: 5s;
-        animation-fill-mode: both;
-        animation-iteration-count: 3;
-        animation-timing-function: ease-in-out;
-        animation-direction: alternate;
-        animation-delay: 1s; */
-        animation: moving 3s both 3 ease-in-out alternate 1s;
+      h1 {
+        text-align: center;
+        color: white;
+        font-family: 'Inter';
+        font-size: 90px;
+        line-height: 90px;
+        letter-spacing: 15px;
+        text-shadow:    0 1px 0 #efefef,
+                        0 2px 0 #efefef,
+                        0 3px 0 #efefef,
+                        0 4px 0 #efefef,
+                        0 20px 5px rgba(0,0,0, 0.1);
+        animation: float 3s linear infinite alternate;
       }
 
-      @keyframes moving {
-        0% {
-          transform: translateX(0);
+      @keyframes float {
+        from {
+            transform: rotate(5deg);
         }
-        50% {
-          transform: translateX(1000px);
-        }
-        100% {
-            transform: translate(1000px, 500px);
+        to {
+            transform: rotate(-5deg);
         }
       }
+
     </style>
   </head>
   <body>
-    <div></div>
+    <h1>COMING<br>SOON!<br></h1>
   </body>
 </html>
