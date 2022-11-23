@@ -26,47 +26,41 @@
       }
 
       body {
-        margin: 0;
-        padding: 0;
-      }
-
-      .background {
-        width: 100%;
         height: 100vh;
-        background: url('./img/bg.jpg');
-        background-position: bottom left;
-        animation: driving 10s linear infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ea2027;
       }
 
-      @keyframes driving {
+      h1 {
+        color: white;
+        font-size: 50px;
+      }
+
+      span:before {
+        content: 'transitions';
+        text-transform: uppercase;
+        font-family: 'Inter';
+        color: #1b1464;
+        animation: word-switch 5s infinite;
+      }
+
+      @keyframes word-switch {
         0% {
-            background-position: bottom left;
+            content: 'transitions';
+        }
+        50% {
+            content: 'animations';
         }
         100% {
-            background-position: bottom right;
+            content: 'transforms';
         }
-      }
-
-      .car {
-        position: absolute;
-        left: 300px;
-        bottom: -10px;
-        width: 200px;
-      }
-
-      .bike {
-        position: absolute;
-        left: 700px;
-        bottom: 170px;
-        width: 150px;
       }
 
     </style>
   </head>
   <body>
-    <div class="background">
-        <img src="img/car.png" class="car">
-        <img src="img/bike.png" class="bike">
-    </div>
+    <h1>I love CSS <span></span></h1>
   </body>
 </html>
