@@ -31,35 +31,32 @@
         justify-content: center;
         align-items: center;
         background-color: #26de81;
+        perspective: 200px;
       }
 
-      h1 {
-        text-align: center;
-        color: white;
-        font-family: 'Inter';
-        font-size: 90px;
-        line-height: 90px;
-        letter-spacing: 15px;
-        text-shadow:    0 1px 0 #efefef,
-                        0 2px 0 #efefef,
-                        0 3px 0 #efefef,
-                        0 4px 0 #efefef,
-                        0 20px 5px rgba(0,0,0, 0.1);
-        animation: float 3s linear infinite alternate;
+      .loading {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border-radius: 12px;
+        animation: loading 2s linear infinite;
       }
 
-      @keyframes float {
-        from {
-            transform: rotate(5deg);
+      @keyframes loading {
+        0% {
+            transform: rotateX(0deg) rotateY(0deg);
         }
-        to {
-            transform: rotate(-5deg);
+        50% {
+            transform: rotateX(0deg) rotateY(180deg);
+        }
+        100% {
+            transform: rotateX(180deg) rotateY(180deg);
         }
       }
 
     </style>
   </head>
   <body>
-    <h1>COMING<br>SOON!<br></h1>
+    <div class="loading"></div>
   </body>
 </html>
