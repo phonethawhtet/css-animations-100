@@ -25,25 +25,45 @@
         box-sizing: border-box;
       }
 
-      .banner {
+      body {
         height: 100vh;
-        background: url(./img/bg.png);
-        background-position: 0 0;
-        animation: animated-pattern 15s linear infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #222;
       }
 
-      @keyframes animated-pattern {
-        from {
-            background-position: 0 0;
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        padding: 40px 80px;
+        border: 3px solid white;
+        transition: all .3s;
+      }
+
+      a:hover {
+        border: 3px solid #f44336;
+        color: #f44336;
+        animation: shake 0.3s linear 1;
+      }
+
+      @keyframes shake {
+        33% {
+            transform: rotate(10deg);
         }
-        to {
-            background-position: 800px 600px;
+        66% {
+            transform: rotate(-10deg);
+        }
+        100% {
+            transform: rotate(10deg);
         }
       }
 
     </style>
   </head>
   <body>
-    <div class="banner"></div>
+    <a href="#">Hover Me</a>
   </body>
 </html>
