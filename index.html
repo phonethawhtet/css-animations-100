@@ -34,12 +34,14 @@
         width: 150px;
         height: 150px;
         background-color: red;
-        animation-name: moving;
+        /* animation-name: moving;
         animation-duration: 5s;
-        animation-iteration-count: infinite;
-        animation-fill-mode: forwards;
+        animation-fill-mode: both;
+        animation-iteration-count: 3;
         animation-timing-function: ease-in-out;
         animation-direction: alternate;
+        animation-delay: 1s; */
+        animation: moving 3s both 3 ease-in-out alternate 1s;
       }
 
       @keyframes moving {
