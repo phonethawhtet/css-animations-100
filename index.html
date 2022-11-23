@@ -25,42 +25,25 @@
         box-sizing: border-box;
       }
 
-      body {
+      .banner {
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #ea2027;
+        background: url(./img/bg.png);
+        background-position: 0 0;
+        animation: animated-pattern 15s linear infinite;
       }
 
-      h1 {
-        color: white;
-        font-size: 50px;
-      }
-
-      span:before {
-        content: 'transitions';
-        text-transform: uppercase;
-        font-family: 'Inter';
-        color: #1b1464;
-        animation: word-switch 5s infinite;
-      }
-
-      @keyframes word-switch {
-        0% {
-            content: 'transitions';
+      @keyframes animated-pattern {
+        from {
+            background-position: 0 0;
         }
-        50% {
-            content: 'animations';
-        }
-        100% {
-            content: 'transforms';
+        to {
+            background-position: 800px 600px;
         }
       }
 
     </style>
   </head>
   <body>
-    <h1>I love CSS <span></span></h1>
+    <div class="banner"></div>
   </body>
 </html>
