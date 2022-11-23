@@ -26,37 +26,47 @@
       }
 
       body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .background {
+        width: 100%;
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #26de81;
-        perspective: 200px;
+        background: url('./img/bg.jpg');
+        background-position: bottom left;
+        animation: driving 10s linear infinite;
       }
 
-      .loading {
-        width: 100px;
-        height: 100px;
-        background-color: white;
-        border-radius: 12px;
-        animation: loading 2s linear infinite;
-      }
-
-      @keyframes loading {
+      @keyframes driving {
         0% {
-            transform: rotateX(0deg) rotateY(0deg);
-        }
-        50% {
-            transform: rotateX(0deg) rotateY(180deg);
+            background-position: bottom left;
         }
         100% {
-            transform: rotateX(180deg) rotateY(180deg);
+            background-position: bottom right;
         }
+      }
+
+      .car {
+        position: absolute;
+        left: 300px;
+        bottom: -10px;
+        width: 200px;
+      }
+
+      .bike {
+        position: absolute;
+        left: 700px;
+        bottom: 170px;
+        width: 150px;
       }
 
     </style>
   </head>
   <body>
-    <div class="loading"></div>
+    <div class="background">
+        <img src="img/car.png" class="car">
+        <img src="img/bike.png" class="bike">
+    </div>
   </body>
 </html>
