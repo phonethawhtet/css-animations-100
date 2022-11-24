@@ -31,51 +31,78 @@
         justify-content: center;
         align-items: center;
         background-color: #222;
+        font-family: 'Inter';
       }
 
-      a {
-        text-decoration: none;
-        color: white;
-        font-family: 'Inter', sans-serif;
-        font-size: 40px;
-        border: 3px solid white;
-        padding: 40px 80px;
-        position: relative;
-        overflow: hidden;
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
       }
 
-      a:before {
-        content: '';
-        background-color: #f44336;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 120px;
-        height: 100%;
-        z-index: -1;
-        transform: skew(-15deg);
-        animation: moving 1.2s linear infinite;
-        transition: all .1s;
+      li {
+        list-style: none;
+        color: #484848;
+        font-size: 80px;
+        letter-spacing: 15px;
+        animation: lighting 1.4s linear infinite;
       }
 
-      a:hover:before {
-        width: 100%;
-        animation: none;
-        transform: skew(0deg);
-      }
-
-      @keyframes moving {
-        from {
-            left: -120px;
+      @keyframes lighting {
+        0% {
+            color: #484848;
+            text-shadow: none;
         }
-        to {
-            left: 100%;
+        90% {
+            color: #484848;
+            text-shadow: none;
         }
+        100% {
+            color: #fff900;
+            text-shadow: 0 0 7px #fff900, 0 0 50px #ff6c00;
+        }
+      }
+
+      ul li:nth-child(1) {
+        animation-delay: 0;
+      }
+
+      ul li:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      ul li:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      ul li:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      ul li:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+      ul li:nth-child(6) {
+        animation-delay: 0.5s;
+      }
+      ul li:nth-child(7) {
+        animation-delay: 0.6s;
+      }
+      ul li:nth-child(8) {
+        animation-delay: 0.7s;
       }
 
     </style>
   </head>
   <body>
-    <a href="#">Hover Me</a>
+
+    <ul>
+        <li>L</li>
+        <li>I</li>
+        <li>G</li>
+        <li>H</li>
+        <li>T</li>
+        <li>I</li>
+        <li>N</li>
+        <li>G</li>
+    </ul>
+
   </body>
 </html>
