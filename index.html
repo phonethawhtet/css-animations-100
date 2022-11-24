@@ -30,35 +30,97 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #272727;
         font-family: 'Inter';
-        background: url(img/castle.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
       }
 
-      .rain {
+      ul {
+        display: flex;
+      }
+
+      ul li {
+        list-style: none;
+        width: 120px;
+        height: 120px;
+        margin: 0 20px;
+        border: 2px solid #0a3d62;
+        border-radius: 50%;
+        transition: all .5s;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      ul li i {
+        font-size: 48px;
+        color: #0a3d62;
+        transition: all .5s;
+      }
+
+      ul li:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        background: url(img/rain.png);
-        background-size: cover;
-        animation: rain .3s linear infinite;
+        background-color: #0a3d62;
+        border-radius: 50%;
+        z-index: -1;
+        transition: all .5s;
+        opacity: 0;
       }
 
-      @keyframes rain {
+      ul li:hover:before {
+        opacity: 1;
+        transform: scale(.8);
+      }
+
+      ul li:hover i {
+        color: white;
+      }
+
+      ul li:after {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: 2px dashed #2e86de;
+        border-radius: 50%;
+        z-index: -1;
+        transition: all .5s;
+        opacity: 0;
+      }
+
+      @keyframes rotating {
         0% {
-            background-position: 0 0;
+            transform: scale(0.9) rotate(0deg);
         }
         100% {
-            background-position: -20% -100%;
+            transform: scale(0.9) rotate(360deg);
         }
       }
+
+      ul li:hover:after {
+        opacity: 1;
+        animation: rotating 10s linear infinite;
+      }
+
 
     </style>
   </head>
   <body>
 
-    <div class="rain"></div>
+    <ul>
+        <li><i class="fas fa-heart"></i></li>
+        <li><i class="fas fa-glass-martini"></i></li>
+        <li><i class="fas fa-globe"></i></li>
+        <li><i class="fas fa-gift"></i></li>
+    </ul>
 
   </body>
 </html>
