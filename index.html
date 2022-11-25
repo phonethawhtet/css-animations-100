@@ -31,54 +31,33 @@
         justify-content: center;
         align-items: center;
         font-family: 'Inter';
+        background-color: #272727;
       }
 
-      .pulse {
-        width: 100px;
-        height: 100px;
-        background-color: #58ea00;
-        color: white;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 100px;
-        font-size: 48px;
-        position: relative;
+      .slider {
+        width: 800px;
+        height: 400px;
+        background: url(img/img1.jpg);
+        animation: changeBackground 10s linear infinite;
       }
 
-      .pulse:before, .pulse:after {
-        content: '';
-        position: absolute;
-        inset: -20px;
-        border: 1px solid #58ea00;
-        border-radius: 50%;
-        animation: pulsing 1.5s linear infinite;
-      }
-
-      .pulse:after {
-        animation-delay: .5s;
-      }
-
-      @keyframes pulsing {
-        0% {
-            transform: scale(0.5);
-            opacity: 0;
-        }
-        50% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        100% {
-            transform: scale(1.2);
-            opacity: 0;
-        }
+      @keyframes changeBackground {
+        0% { background: url(img/img1.jpg) }
+        20% { background: url(img/img1.jpg) }
+        25% { background: url(img/img2.jpg) }
+        45% { background: url(img/img2.jpg) }
+        50% { background: url(img/img3.jpg) }
+        70% { background: url(img/img3.jpg) }
+        75% { background: url(img/img4.jpg) }
+        100% { background: url(img/img4.jpg) }
       }
 
     </style>
   </head>
   <body>
 
-    <div class="pulse">
-        <i class="fas fa-phone"></i>
+    <div class="slider">
+
     </div>
 
   </body>
