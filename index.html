@@ -31,62 +31,94 @@
         justify-content: center;
         align-items: center;
         font-family: 'Inter';
-        background-color: #272727;
+        background-color: #0b1634;
       }
 
-      .cradle {
-        display: flex;
-        border-top: 10px solid white;
-      }
-
-      .cradle span {
-        display: block;
-        width: 3px;
-        height: 300px;
-        background: white;
-        margin: 0 30px;
+      .container {
+        width: 100px;
+        height: 100px;
         position: relative;
-        transform-origin: top;
+        animation: animate 1s linear infinite;
+        transform: rotate(45deg)
       }
 
-      .cradle span:before {
-        content: "";
+      span {
         position: absolute;
+        width: 50px;
+        height: 50px;
+        animation: rotate 1s linear infinite;
+      }
+
+      span:nth-child(1) {
+        top: 0;
+        left: 0;
+        background-color: #fceba7;
+      }
+
+      span:nth-child(2) {
+        top: 0;
+        right: 0;
+        background-color: #55dd89;
+      }
+
+      span:nth-child(3) {
         bottom: 0;
-        left: 50%;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background-color: white;
-        transform: translateX(-50%);
+        left: 0;
+        background-color: #fd6c64;
       }
 
-      .cradle span:first-child {
-        animation: left-arm 2s ease-in infinite;
-      }
-      .cradle span:last-child {
-        animation: right-arm 2s ease-in infinite 1s;
+      span:nth-child(4) {
+        bottom: 0;
+        right: 0;
+        background-color: #1478b0;
       }
 
-      @keyframes left-arm {
-        0% { transform: rotate(0deg); }
-        25% { transform: rotate(60deg); }
-        50% { transform: rotate(0deg); }
-        100% { transform: rotate(0deg); }
+      @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        10% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(90deg);
+        }
+        90% {
+            transform: rotate(90deg);
+        }
+        100% {
+            transform: rotate(90deg);
+        }
       }
-      @keyframes right-arm {
-        0% { transform: rotate(0deg); }
-        25% { transform: rotate(-60deg); }
-        50% { transform: rotate(0deg); }
-        100% { transform: rotate(0deg); }
+
+      @keyframes animate {
+        0% {
+            width: 100px;
+            height: 100px;
+        }
+        10% {
+            width: 100px;
+            height: 100px;
+        }
+        50% {
+            width: 150px;
+            height: 150px;
+        }
+        90% {
+            width: 100px;
+            height: 100px;
+        }
+        100% {
+            width: 100px;
+            height: 100px;
+        }
       }
 
     </style>
   </head>
   <body>
 
-    <div class="cradle">
-        <span></span>
+    <div class="container">
         <span></span>
         <span></span>
         <span></span>
