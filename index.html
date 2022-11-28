@@ -34,77 +34,42 @@
         background-color: #0b1634;
       }
 
-      .loader {
-        width: 150px;
-        height: 150px;
+      h1 {
+        font-size: 50px;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        color: white;
         position: relative;
-
       }
 
-      span {
+      h1:before {
+        content: "loading...";
         position: absolute;
-        width: 50px;
-        height: 50px;
-        background: white;
-        border-radius: 4px;
-        animation: chase 2s linear infinite;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: #f6b93b;
+        overflow: hidden;
+        border-right: 4px solid #f6b93b;
+        animation: animate 5s linear infinite;
       }
 
-      span:nth-child(2) {
-        animation-delay: .7s;
-      }
-
-      span:nth-child(3) {
-        animation-delay: 1.4s;
-      }
-
-      @keyframes chase {
+      @keyframes animate {
         0% {
-            top: 0;
-            left: 0;
-        }
-        12.5% {
-            top: 0;
-            left: 50%;
-        }
-        25% {
-            top: 0;
-            left: 50%;
-        }
-        37.5% {
-            top: 50%;
-            left: 50%;
+            width: 0;
         }
         50% {
-            top: 50%;
-            left: 50%;
-        }
-        62.5% {
-            top: 50%;
-            left: 0;
-        }
-        75% {
-            top: 50%;
-            left: 0;
-        }
-        87.5% {
-            top: 0;
-            left: 0;
+            width: 100%;
         }
         100% {
-            top: 0;
-            left: 0;
+            width: 0;
         }
       }
     </style>
   </head>
   <body>
 
-    <div class="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <h1>loading...</h1>
 
   </body>
 </html>
