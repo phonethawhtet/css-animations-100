@@ -34,52 +34,57 @@
         background-color: #2f2f2f;
       }
 
-      .wave {
+      .container {
         position: relative;
-        width: 500px;
+        width: 800px;
         height: 500px;
+        background-color: #222;
       }
 
-      h2 {
+      .clip {
         position: absolute;
-        text-align: center;
-        line-height: 500px;
-        font-size: 170px;
-        text-transform: uppercase;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all .5s;
       }
 
-      h2:nth-child(1) {
-        color: transparent;
-        -webkit-text-stroke: 2px #03a9f4;
-      }
-
-      h2:nth-child(2) {
-        color: #03a9f4;
-        animation: wave 2s ease-in-out infinite;
+      .clip1 {
+        background: url(img/img1.jpg);
+        background-size: cover;
+        background-position: center;
     }
 
-    @keyframes wave {
-        0% {
-            clip-path: polygon(0% 38%, 21% 40%, 38% 51%, 54% 57%, 75% 57%, 100% 52%, 100% 100%, 0% 100%);
-        }
-        50% {
-            clip-path: polygon(0 49%, 16% 56%, 33% 55%, 55% 50%, 75% 42%, 100% 40%, 100% 100%, 0% 100%);
-        }
-        100% {
-            clip-path: polygon(0% 38%, 21% 40%, 38% 51%, 54% 57%, 75% 57%, 100% 52%, 100% 100%, 0% 100%);
-        }
-      }
+    .clip2 {
+          background: url(img/img2.jpg);
+          background-size: cover;
+          background-position: center;
+          clip-path: polygon(13% 0, 81% 0, 59% 100%, 36% 100%);
+    }
+    .clip3 {
+          background: url(img/img3.jpg);
+          background-size: cover;
+          background-position: center;
+          clip-path: polygon(79% 0, 100% 0, 100% 100%, 59% 100%);
+    }
 
+    .container:hover .clip {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
 
-
+    .container .clip:hover {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
 
     </style>
   </head>
   <body>
 
-    <div class="wave">
-        <h2>wave</h2>
-        <h2>wave</h2>
+    <div class="container">
+        <div class="clip clip1"></div>
+        <div class="clip clip2"></div>
+        <div class="clip clip3"></div>
     </div>
 
   </body>
