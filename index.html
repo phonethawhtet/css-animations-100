@@ -31,86 +31,78 @@
         justify-content: center;
         align-items: center;
         font-family: 'Inter';
-        background-color: #c8d6e5;
     }
 
     .card {
         position: relative;
-        width: 335px;
-        height: 500px;
-    }
-
-    .img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: all .5s;
-        clip-path: circle(70.7% at 50% 50%);
-    }
-
-    img {
-        width: 100%;
-    }
-
-    .card:hover .img {
-        clip-path: circle(18.2% at 50% 38%);
+        width: 400px;
+        height: 400px;
+        background-color: black;
     }
 
     .content {
         position: absolute;
-        left: 0;
-        bottom: 16px;
+        width: 60%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
         text-align: center;
     }
 
     h2 {
-        text-transform: uppercase;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+
     }
 
     p {
-        margin-bottom: 25px;
-        font-size: 16px;
+        margin-bottom: 30px;
         text-transform: capitalize;
     }
 
     a {
         display: inline-block;
+        padding: 10px;
+        border: 1px solid white;
         text-decoration: none;
-        background-color: black;
         color: white;
-        padding: 5px 10px;
+        transition: .5s;
         text-transform: capitalize;
     }
 
-    h2,p,a {
-        opacity: 0;
-        transition: 0.3s;
-        transform: translateY(20px);
+    a:hover {
+        color: black;
+        background-color: #fff;
     }
 
-    .card:hover h2,
-    .card:hover p,
-    .card:hover a {
-        opacity: 1;
-        transform: translateY(0);
-        transition-delay: .5s;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .5s;
+        clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%);
     }
+
+    img:hover {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 0);
+    }
+
 
     </style>
   </head>
   <body>
 
     <div class="card">
-        <div class="img">
-            <img src="img/img.jpg">
-        </div>
         <div class="content">
-            <h2>title</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores animi, impedit perferendis eligendi voluptatum aspernatur quas. Aliquam corporis optio laudantium hic quod adipisci eum libero. Animi, aliquam. A, quisquam reprehenderit.</p>
+            <h2>image hover effect</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, harum laborum adipisci aspernatur error maxime minima amet animi eaque odio consequatur quam nobis explicabo quidem impedit omnis, magni nulla fugit!</p>
             <a href="#">read more</a>
         </div>
+        <img src="img/img.jpg">
     </div>
 
   </body>
