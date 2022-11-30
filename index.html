@@ -31,28 +31,38 @@
         justify-content: center;
         align-items: center;
         font-family: 'Inter';
-      }
-
-      .card {
-        width: 500px;
-        height: 250px;
-        background-color: #c7ecee;
-        padding: 20px 80px 20px 20px;
-        border-radius: 10px;
-        transition: all .5s;
-        clip-path: circle(7.1% at 93% 20%);
+        background-color: #c8d6e5;
     }
 
-    .card:hover {
-        clip-path: circle(70%);
+    .main {
+        position: relative;
+        width: 800px;
       }
 
       h1 {
-        margin-bottom: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        font-size: 220px;
+        text-transform: uppercase;
+        transform: translate(-50%, -50%);
       }
 
-      p {
-        font-size: 18px;
+      h1:nth-child(2) {
+        color: white;
+        transition: 0.5s;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
+        background-color: #c8d6e5;
+      }
+
+      h1:nth-child(2):hover {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+
+      h1:nth-child(1):hover ~ h1 {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
       }
 
 
@@ -60,9 +70,9 @@
   </head>
   <body>
 
-    <div class="card">
-        <h1>information</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae obcaecati aut accusamus aliquam vero quibusdam, ipsa molestias! Nobis similique doloremque modi officia voluptatem, ex aspernatur porro, voluptatum omnis inventore incidunt.</p>
+    <div class="main">
+        <h1>black</h1>
+        <h1>white</h1>
     </div>
 
   </body>
