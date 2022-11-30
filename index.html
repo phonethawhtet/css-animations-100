@@ -25,93 +25,55 @@
             justify-content: center;
             align-items: center;
             font-family: 'Inter';
-        }
-
-        li {
-            position: relative;
-            list-style: none;
-            margin: 10px 0;
-            overflow: hidden;
+            background-color: #222;
         }
 
         a {
             position: relative;
-            display: block;
+            width: 180px;
+            height: 60px;
+        }
+
+        a span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: white;
+            background-color: #4834d4;
             text-align: center;
-            margin: 0;
-            padding: 5px 10px;
+            line-height: 60px;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 22px;
+        }
+
+        span:nth-child(2) {
+            background-color: white;
+            color: #4834d4;
             transition: .5s;
-            font-size: 60px;
-            font-weight: 900;
-            text-decoration: none;
-            color: transparent;
+            clip-path: polygon(61% 0, 100% 0%, 100% 100%, 60% 100%, 40% 52%);
         }
 
-        a:before {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 5px 0;
-            color: #262626;
-            transition: .5s;
-            transition-delay: .25s;
-            clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 50%);
+        span:nth-child(2):hover {
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0 53%);
         }
 
-        a:after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 5px 0;
-            color: #262626;
-            transition: .5s;
-            transition-delay: .25s;
-            clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+        span:nth-child(1):hover ~ span {
+            clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%, 100% 55%);
         }
 
-        a:hover:before {
-            color: rgb(160, 0, 0);
-            transform: translate(10px, -3px);
-        }
-
-        a:hover:after {
-            color: rgb(160, 0, 0);
-            transform: translate(-10px, 3px);
-        }
-
-        li:before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            height: 1px;
-            background-color: #262626;
-            left: -100%;
-            transition: .5s;
-        }
-
-        li:hover:before {
-            left: 100%;
-        }
 
     </style>
 </head>
 
 <body>
 
-    <ul>
-        <li><a href="#" data-text="home">home</a></li>
-        <li><a href="#" data-text="about">about</a></li>
-        <li><a href="#" data-text="services">services</a></li>
-        <li><a href="#" data-text="team">team</a></li>
-        <li><a href="#" data-text="contact">contact</a></li>
-    </ul>
+    <a href="#">
+        <span>button</span>
+        <span>button</span>
+    </a>
 
 </body>
 
