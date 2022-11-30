@@ -34,45 +34,83 @@
         background-color: #c8d6e5;
     }
 
-    .main {
+    .card {
         position: relative;
-        width: 800px;
-      }
+        width: 335px;
+        height: 500px;
+    }
 
-      h1 {
+    .img {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        transition: all .5s;
+        clip-path: circle(70.7% at 50% 50%);
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .card:hover .img {
+        clip-path: circle(18.2% at 50% 38%);
+    }
+
+    .content {
+        position: absolute;
+        left: 0;
+        bottom: 16px;
         text-align: center;
-        font-size: 220px;
+    }
+
+    h2 {
         text-transform: uppercase;
-        transform: translate(-50%, -50%);
-      }
+    }
 
-      h1:nth-child(2) {
+    p {
+        margin-bottom: 25px;
+        font-size: 16px;
+        text-transform: capitalize;
+    }
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        background-color: black;
         color: white;
-        transition: 0.5s;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
-        background-color: #c8d6e5;
-      }
+        padding: 5px 10px;
+        text-transform: capitalize;
+    }
 
-      h1:nth-child(2):hover {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-      }
+    h2,p,a {
+        opacity: 0;
+        transition: 0.3s;
+        transform: translateY(20px);
+    }
 
-      h1:nth-child(1):hover ~ h1 {
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-      }
-
+    .card:hover h2,
+    .card:hover p,
+    .card:hover a {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .5s;
+    }
 
     </style>
   </head>
   <body>
 
-    <div class="main">
-        <h1>black</h1>
-        <h1>white</h1>
+    <div class="card">
+        <div class="img">
+            <img src="img/img.jpg">
+        </div>
+        <div class="content">
+            <h2>title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores animi, impedit perferendis eligendi voluptatum aspernatur quas. Aliquam corporis optio laudantium hic quod adipisci eum libero. Animi, aliquam. A, quisquam reprehenderit.</p>
+            <a href="#">read more</a>
+        </div>
     </div>
 
   </body>
